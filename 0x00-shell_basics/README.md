@@ -1,0 +1,1 @@
+This directory contains all of the files that contain the Holberton assignments. 
