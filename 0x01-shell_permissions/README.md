@@ -1,1 +1,1 @@
-This project is about learning specific user/file/directory permissions in Linux.
+This project is about understanding permissions with a variety of different commands. 
