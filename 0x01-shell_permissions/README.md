@@ -1,0 +1,1 @@
+This project is about learning specific user/file/directory permissions in Linux.
