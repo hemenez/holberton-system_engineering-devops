@@ -1,0 +1,1 @@
+This project is about learning shell input/output redirections and writing shell scripts that allow us to use said redirection.
