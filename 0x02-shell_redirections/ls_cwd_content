@@ -1,14 +1,29 @@
-total 48
-drwxrwxr-x 2 vagrant vagrant 4096 Sep  9 23:47 .
+total 108
+drwxrwxr-x 2 vagrant vagrant 4096 Sep 10 19:58 .
 drwxrwxr-x 6 vagrant vagrant 4096 Sep  9 22:18 ..
 -rwxrw-r-- 1 vagrant vagrant   32 Sep  9 22:35 0-hello_world
--rwxrw-r-- 1 vagrant vagrant   29 Sep  9 22:41 1-confused_smiley
+-rwxrw-r-- 1 vagrant vagrant   48 Sep 10 04:47 10-no_more_js
+-rwxrw-r-- 1 vagrant vagrant   45 Sep 10 05:02 11-directories
+-rwxrw-r-- 1 vagrant vagrant   29 Sep 10 02:33 12-newest_files
+-rwxrw-r-- 1 vagrant vagrant   27 Sep 10 02:56 13-unique
+-rwxrw-r-- 1 vagrant vagrant   36 Sep 10 03:05 14-findthatword
+-rwxrw-r-- 1 vagrant vagrant   43 Sep 10 03:09 15-countthatword
+-rwxrw-r-- 1 vagrant vagrant   41 Sep 10 03:13 16-whatsnext
+-rwxrw-r-- 1 vagrant vagrant   38 Sep 10 03:20 17-hidethisword
+-rwxrw-r-- 1 vagrant vagrant   50 Sep 10 03:34 18-letteronly
+-rwxrw-r-- 1 vagrant vagrant   29 Sep 10 03:38 19-AZ
+-rwxrw-r-- 1 vagrant vagrant   28 Sep 10 04:30 1-confused_smiley
+-rwxrw-r-- 1 vagrant vagrant   23 Sep 10 03:54 20-hiago
+-rwxrw-r-- 1 vagrant vagrant   16 Sep 10 03:56 21-reverse
+-rwxrw-r-- 1 vagrant vagrant   47 Sep 10 19:54 22-users_and_homes
 -rwxrw-r-- 1 vagrant vagrant   28 Sep  9 22:49 2-hellofile
 -rwxrw-r-- 1 vagrant vagrant   39 Sep  9 22:47 3-twofiles
 -rwxrw-r-- 1 vagrant vagrant   33 Sep  9 22:51 4-lastlines
 -rwxrw-r-- 1 vagrant vagrant   33 Sep  9 22:53 5-firstlines
--rwxrw-r-- 1 vagrant vagrant   45 Sep  9 23:30 6-third_line
--rwxrw-r-- 1 vagrant vagrant   36 Sep  9 23:47 8-cwd_state
--rw-rw-r-- 1 vagrant vagrant   34 Sep  9 23:06 iacta
--rw-rw-r-- 1 vagrant vagrant    0 Sep  9 23:47 ls_cwd_content
+-rwxrw-r-- 1 vagrant vagrant   36 Sep 10 05:10 6-third_line
+-rwxrw-r-- 1 vagrant vagrant   36 Sep 10 19:50 8-cwd_state
+-rwxrw-r-- 1 vagrant vagrant   36 Sep 10 00:42 9-duplicate_last_line
+-rw-rw-r-- 1 vagrant vagrant   69 Sep 10 05:11 iacta
+-rw-rw-r-- 1 vagrant vagrant    0 Sep 10 20:13 ls_cwd_content
 -rw-rw-r-- 1 vagrant vagrant  127 Sep  9 22:21 README.md
+-rw-rw-r-- 1 vagrant vagrant 1672 Sep 10 19:59 tester
