@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# This script displays "Holberton School" ten times
+count=0
+while [ $count -le 9 ]
+do
+    echo "Holberton School"
+    if [ $count == 8 ]; then echo "Hi"
+    fi
+    (( count++ ))
+done
