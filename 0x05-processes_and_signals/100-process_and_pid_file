@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# This script creates a file and displays messages based on signals
+echo $$ > /var/run/holbertonscript.pid
+sigtermtrap ()
+{
+echo 'I hate the kill command'
+rm /var/run/holbertonscript.pid
+exit
+}
+
+sigquittrap ()
+{
+pkill -f 100-process_and_pid_file
+rm /var/run/holbertonscript.pd
+exit
+}
+
+trap 'echo Y U no love me?!; exit' 2
+trap sigtermtrap 15
+trap sigquittrap 3
+
+while :
+do
+    echo "To infinity and beyond"
+    sleep 1
+done
