@@ -3,8 +3,8 @@
 cp /etc/hosts ~/hosts.new
 anyIP='[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}'
 FB="facebook.com"
-homeIP=127.0.0.2
-newIP=127.0.0.1
+homeIP=127.0.0.1
+newIP=127.0.0.2
 if grep -q $FB /etc/hosts; then
     sed -i "s/^$anyIP $FB/8.8.8.8 $FB/" ~/hosts.new
 else
