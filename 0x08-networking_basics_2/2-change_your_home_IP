@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 # This script changes specific IPs and saves to /etc/hosts file
 cp /etc/hosts ~/hosts.new
-anyIP='[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}'
 FB="facebook.com"
+newIP=127.0.0.2
+myHost=localhost
 if grep -q $FB /etc/hosts; then
-    sed -i "s/^$anyIP $FB/8.8.8.8 $FB/" ~/hosts.new
+    sed -i "/$FB/ s/.*/8.8.8.8 $FB/g" ~/hosts.new
 else
     echo "8.8.8.8 facebook.com" >> ~/hosts.new
 fi
-sed -i "s/127.0.0.1 localhost/127.0.0.2 localhost/" ~/hosts.new
+sed -i "/$myHost/ s/.*/$newIP $myHost/g" ~/hosts.new
 cp -f ~/hosts.new /etc/hosts
