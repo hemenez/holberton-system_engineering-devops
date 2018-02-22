@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 # This script changes specific IPs and saves to /etc/hosts file
 cp /etc/hosts ~/hosts.new
-FB="facebook.com"
 newIP=127.0.0.2
-myHost=localhost
+myHOST=localhost
+sed -i "/$myHOST/ s/.*/$newIP\t$myHOST/g" ~/hosts.new
 echo "8.8.8.8 facebook.com" >> ~/hosts.new
-sed -i "/$myHost/ s/.*/$newIP $myHost/g" ~/hosts.new
 cp -f ~/hosts.new /etc/hosts
