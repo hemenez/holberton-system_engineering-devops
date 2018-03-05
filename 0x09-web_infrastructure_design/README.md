@@ -1,0 +1,1 @@
+This project is about creating the most basic web infrastructure and understanding all aspects of its build.
