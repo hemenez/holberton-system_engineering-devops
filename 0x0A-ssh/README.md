@@ -1,0 +1,1 @@
+This project is about using ssh and a specific server allocated to us.
