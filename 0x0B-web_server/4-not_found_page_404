@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 #Script configures server to have custom 404 page
-sudo apt-get install -y nginx
-echo "Ceci n'est pas une page" > /usr/share/nginx/html/custom_404.html
+sudo apt-get -y install nginx
+my_string="\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\t\n\t}\n"
+sed -i "38i\ $my_string" /etc/nginx/sites-available/default
+echo "Holberton School" | sudo tee /usr/share/nginx/html/index.html
+echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/custom_404.html
 to_replace="\t#error_page 404 \/404.html;"
-new_string="\terror_page 404 \/custom_404.html;\n\tlocation = \/custom_404.html {\n\t\troot \/usr\/share\/nginx\/html;\n\t\tinternal;\n\t}\n"
+new_string="\terror_page 404 \/custom_404.html;\n\tlocation = \/custom_404.html {\n\t\troot \/usr\/share\/nginx\/html;\n\t\tinternal;\n\t}"
 sed -i "s/$to_replace/$new_string/" /etc/nginx/sites-available/default
 sudo service nginx restart
