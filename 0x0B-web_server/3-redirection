@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Script configures server to redirect to another page
+sudo apt-get -y update
 sudo apt-get install -y nginx
-to_replace="\tserver_name localhost;"
-new_string="\tserver_name locahost;\n\n\tlocation \/redirect_me {\n\t\treturn 301 https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4;\t\n\t}"
-sed -i "s/$to_replace/$new_string/" /etc/nginx/sites-available/default
+new_string="\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\t\n\t}\n"
+sed -i "38i\ $new_string" /etc/nginx/sites-available/default
 sudo service nginx restart
