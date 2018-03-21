@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 #Script configures server to have custom 404 page
 sudo apt-get install -y nginx
-#!/usr/bin/env bash
-#Script configures server to have custom 404 page
 echo "Ceci n'est pas une page" > /usr/share/nginx/html/custom_404.html
 to_replace="\t#error_page 404 \/404.html;"
 new_string="\terror_page 404 \/custom_404.html;\n\tlocation = \/custom_404.html {\n\t\troot \/usr\/share\/nginx\/html;\n\t\tinternal;\n\t}\n"
