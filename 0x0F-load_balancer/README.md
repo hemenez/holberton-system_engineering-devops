@@ -1,0 +1,1 @@
+This project configures two web servers and one load balancer to help with the AirBnB project.
