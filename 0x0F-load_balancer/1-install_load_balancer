@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 #This script configures an HAProxy of version 1.7
-sudo apt-get install software-properties-common
-echo | sudo add-apt-repository ppa:vbernat/haproxy-1.7
-sudo apt-get update
+sudo apt-get -y update
+sudo apt-get install -y software-properties-common
+sudo add-apt-repository -y ppa:vbernat/haproxy-1.7
+sudo apt-get -y update
 sudo apt-get install -y haproxy=1.7.\*
 echo -e "\nENABLED=1\n" | sudo tee -a /etc/default/haproxy
 my_string="\nlisten 252-lb-01\n\tbind *:80\n\tmode http\n\tstats enable\n\tstats uri /haproxy?stats\n\tbalance roundrobin\n\tserver 252-web-01 54.86.111.122:80 check\n\tserver 252-web-02 34.228.26.238:80 check\n"
