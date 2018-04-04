@@ -6,10 +6,10 @@ touch result
 if [ -z "$2" ]
 then
     {
-	dig www.lindseyhemenez.online
-	dig lb-01.lindseyhemenez.online
-	dig web-01.lindseyhemenez.online
-	dig web-02.lindseyhemenez.online
+	dig www."$1"
+	dig lb-01."$1"
+	dig web-01."$1"
+	dig web-02."$1"
     } >> result
 fi
 
@@ -22,7 +22,7 @@ fi
 
 awk 'f{print;f=0} /ANSWER SECTION:/{f=1}' result | awk 'BEGIN {}
 { printf "The subdomain "}
-{ sub(/.lindseyhemenez.online./,"",$1); printf $1}
+{ sub(/.[a-zA-Z]+.[a-zA-Z]+.$/,"",$1); printf $1}
 { printf " is a "}
 { printf $4 }
 { printf " record and points to "}
