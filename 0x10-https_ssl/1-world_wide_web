@@ -29,8 +29,6 @@ awk 'f{print;f=0} /ANSWER SECTION:/{f=1}' result | awk 'BEGIN {}
 { print $5 }'
 
 rm result
-return 0
-
 }
 
 domain_query "$1" "$2"
