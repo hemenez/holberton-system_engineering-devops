@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+#Script queries all subdomains of given domain and/or queries the single subdomain in legible format
+domain_query () {
+
+if [ -z "$2" ]
+then
+    rm result
+    {
+	dig www.lindseyhemenez.online
+	dig lb-01.lindseyhemenez.online
+	dig web-01.lindseyhemenez.online
+	dig web-02.lindseyhemenez.online
+    } >> result
+fi
+
+
+if [ "$2" ]
+then
+    rm result
+    dig "$2.$1" >> result
+fi
+
+
+awk 'f{print;f=0} /ANSWER SECTION:/{f=1}' result | awk 'BEGIN {}
+{ printf "The subdomain "}
+{ sub(/.lindseyhemenez.online./,"",$1); printf $1}
+{ printf " is a "}
+{ printf $4 }
+{ printf " record and points to "}
+{ print $5 }'
+
+return 0
+
+}
+
+domain_query "$1" "$2"
