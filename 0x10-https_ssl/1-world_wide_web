@@ -2,9 +2,9 @@
 #Script queries all subdomains of given domain and/or queries the single subdomain in legible format
 domain_query () {
 
+touch result
 if [ -z "$2" ]
 then
-    rm result
     {
 	dig www.lindseyhemenez.online
 	dig lb-01.lindseyhemenez.online
@@ -16,7 +16,6 @@ fi
 
 if [ "$2" ]
 then
-    rm result
     dig "$2.$1" >> result
 fi
 
@@ -29,6 +28,7 @@ awk 'f{print;f=0} /ANSWER SECTION:/{f=1}' result | awk 'BEGIN {}
 { printf " record and points to "}
 { print $5 }'
 
+rm result
 return 0
 
 }
