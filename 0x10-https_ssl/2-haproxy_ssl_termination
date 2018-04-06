@@ -36,20 +36,6 @@ defaults
     errorfile 503 /etc/haproxy/errors/503.http
     errorfile 504 /etc/haproxy/errors/504.http
 
-listen 252-lb-01
-       bind *:80
-       mode http
-       stats enable
-       stats uri /haproxy?stats
-       balance roundrobin
-       server 252-web-01 54.86.111.122:80 check
-       server 252-web-02 34.228.26.238:80 check
-
-frontend www-http
-   bind *:80
-   reqadd X-Forwarded-Proto:\ http
-   default_backend www-backend
-
 frontend www-https
    bind *:443 ssl crt /etc/haproxy/certs/lindseyhemenez.online.pem
    reqadd X-Forwarded-Proto:\ https
@@ -58,7 +44,6 @@ frontend www-https
    default_backend www-backend
 
 backend www-backend
-   mode http
    redirect scheme https if !{ ssl_fc }
    balance roundrobin
    server 252-web-01 54.86.111.122:80 check
@@ -66,3 +51,11 @@ backend www-backend
 
 backend letsencrypt-backend
    server letsencrypt 127.0.0.1:54321
+
+listen 252-lb-01
+       bind *:80
+       mode http
+       stats enable
+       stats uri /haproxy?stats
+       server 252-web-01 54.86.111.122:80 check
+       server 252-web-02 34.228.26.238:80 check
