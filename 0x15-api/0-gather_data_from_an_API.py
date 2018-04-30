@@ -10,11 +10,9 @@ if __name__ == "__main__":
     todo = 'https://jsonplaceholder.typicode.com/todos?userId=' + employee_id
     employee_response = requests.get(my_user_url)
     employee_data = employee_response.json()
-#    employee_data = dict(employee_data)
     name = employee_data.get('name')
     todo_response = requests.get(todo)
     todo_data = todo_response.json()
-#    my_dict = {}
     final_count = 0
     count = 0
     my_text = []
@@ -23,17 +21,6 @@ if __name__ == "__main__":
             my_text.append(item.get('title'))
             count += 1
         final_count += 1
-#
-#        my_dict[count] = item
-#        count += 1
-#    completion_count = 0
-#    total_count = 0
-#    my_text = []
-#    for key, val in my_dict.items():
-#        if val.get('completed') is True:
-#            my_text.append(val.get('title'))
-#            completion_count += 1
-#        total_count += 1
     print('Employee {} is done with tasks({}/{}):'.format(name,
                                                           count,
                                                           final_count))
