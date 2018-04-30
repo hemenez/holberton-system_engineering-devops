@@ -31,4 +31,4 @@ if __name__ == "__main__":
                                                            completion_count,
                                                            total_count))
     for i in my_text:
-        print('\t {}'.format(i))
+        print('\t{}'.format(i))
