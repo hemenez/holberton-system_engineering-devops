@@ -27,7 +27,7 @@ if __name__ == "__main__":
             my_text.append(val.get('title'))
             completion_count += 1
         total_count += 1
-    print('Employee {} is done with tasks ({}/{}):'.format(name,
+    print('Employee {} is done with tasks({}/{}):'.format(name,
                                                            completion_count,
                                                            total_count))
     for i in my_text:
