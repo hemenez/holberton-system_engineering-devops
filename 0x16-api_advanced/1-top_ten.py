@@ -14,21 +14,7 @@ def top_ten(subreddit):
         return
     json_data = response.json()
     data_dict = json_data.get('data')
-    print(data_dict['children'][0]['data']['title'])
-    after_val = data_dict['after']
-    after_url = 'https://www.reddit.com/r/' + subreddit + '/hot.json?after='
-    after_url += after_val
-    after_r = requests.get(after_url, headers=headers)
-    after_json = after_r.json()
-    after_dict = after_json.get('data')
-    print(after_dict['children'][0]['data']['title'])
-    count = 1
-    while count < 9:
-        after_val = after_dict['after']
-        after_url = 'https://www.reddit.com/r/' + subreddit
-        after_url += '/hot.json?after=' + after_val
-        after_r = requests.get(after_url, headers=headers)
-        after_json = after_r.json()
-        after_dict = after_json.get('data')
-        print(after_dict['children'][0]['data']['title'])
+    count = 0
+    while count < 10:
+        print(data_dict['children'][count]['data']['title'])
         count += 1
