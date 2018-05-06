@@ -10,7 +10,8 @@ def top_ten(subreddit):
     headers = {'User-Agent': UA_string}
     response = requests.get(url, headers=headers)
     if response.status_code != 200:
-        return 0
+        print(None)
+        return
     json_data = response.json()
     data_dict = json_data.get('data')
     print(data_dict['children'][0]['data']['title'])
