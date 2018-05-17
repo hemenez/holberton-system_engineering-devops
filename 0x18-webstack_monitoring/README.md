@@ -1,0 +1,1 @@
+This project sets up a server monitoring account.
